@@ -13,18 +13,10 @@
   --font: "Varela Round", sans-serif;
 }
 
-*,
-*::after,
-*::before {
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-html {
-  /* footer support */
-  position: relative;
-  min-height: 100%;
 }
 
 body {
@@ -32,8 +24,6 @@ body {
   color: var(--font-color);
   font-family: var(--font);
   line-height: 1.6;
-  /* footer support */
-  margin-bottom: 80px;
 }
 
 h1 {
@@ -49,7 +39,6 @@ button {
   outline: none;
 }
 
-/* HEADER */
 
 .header {
   padding: 20px;
@@ -63,7 +52,6 @@ button {
   text-align: center;
 }
 
-/* MAIN */
 
 .main {
   padding: 0 20px;
@@ -121,33 +109,6 @@ button {
 .restart-button:active {
   background-color: var(--button-active-background);
 }
-
-/* FOOTER */
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.fa-github {
-  color: var(--font-color);
-  font-size: 24px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.fa-github:hover {
-  transform: rotate(360deg) scale(1.2);
-}
-
-/* MEDIA QUERIES */
 
 @media (max-width: 660px) {
   .title {
