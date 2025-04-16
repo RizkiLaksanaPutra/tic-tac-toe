@@ -33,7 +33,7 @@ const gameBoard = (() => {
 const gameController = (() => {
   const playerX = Player("X");
   const playerO = Player("O");
-  let round = 1;
+  let round = 0;
   let isOver = false;
 
   const getCurrentPlayerSign = () => {
@@ -41,7 +41,7 @@ const gameController = (() => {
   };
 
   const reset = () => {
-    round = 1;
+    round = 0;
     isOver = false;
   };
 
@@ -78,13 +78,14 @@ const gameController = (() => {
       return;
     }
 
+    round++;
+
     if (round === 9) {
       displayController.setResultMessage("Draw");
       isOver = true;
       return;
     }
 
-    round++;
     displayController.setMessageElement(
       `Player ${getCurrentPlayerSign()}'s turn`
     );
@@ -110,7 +111,7 @@ const displayController = (() => {
 
   const setResultMessage = (winner) => {
     if (winner === "Draw") {
-      messageElement("It's a draw!");
+      setMessageElement("It's a draw!");
     } else {
       setMessageElement(`Player ${winner} has won!`);
     }
